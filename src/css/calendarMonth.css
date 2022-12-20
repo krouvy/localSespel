@@ -1,0 +1,139 @@
+.master-container {
+    border-radius: 30px;
+    width: 350px;
+    height: 380px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 999999;
+    position: absolute;
+}
+
+.year {
+    background-color: #2ECC71;
+    color: white;
+    text-align: center;
+    font-size: 78px;
+    padding: 20px 0px;
+}
+
+#month {
+    font-size: 38px;
+}
+
+.calendarMonth {
+    padding: 10px 50px;
+    width: 100%;
+    height: 200px;
+}
+
+.tdMonth {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.tdMonthRed {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.tdMonth:hover {
+    background-color: lightblue;
+}
+
+.forw:hover,
+.prev:hover {
+    cursor: pointer;
+    color: lightgreen;
+}
+
+.calendarMonthForm {
+    width: 200px;
+}
+
+.inputCalendarMonth {
+    width: 200px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #83addd;
+    border-radius: 4px;
+    background-color: #252734;
+    color: white;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.energyCalendarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.infoChange {
+    color: #83addd !important;
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.buttonUpdateMonth {
+    color: #161821;
+    background: #83addd;
+    font-size: 120%;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    border: none;
+    border-radius: 15px;
+    height: 35px;
+    width: 115px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-left: 25px;
+    margin-top: 22px;
+}
+
+
+.buttonUpdateMonth:hover {
+    box-shadow: 0px 0px 5px 0px #14B2E9, inset 0px 0px 0px 0px #14b2f3 !important;
+}
+
+
+.buttonUpdateMonth.load {
+    padding: 3px 6px;
+}
+
+.buttonUpdateMonth.load span {
+    opacity: 0;
+}
+
+.buttonUpdateMonth.load:after {
+    display: block;
+}
+
+
+.buttonUpdateMonth:after {
+    display: none;
+    content: '';
+    position: relative;
+    top: -6px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: solid 2px;
+    border-color: #fff transparent transparent transparent;
+    border-radius: 100%;
+    transition: .3s ease;
+    animation: fin 1s infinite;
+    transform-origin: 0 0;
+}
+
+@keyframes fin {
+    from {
+        transform: rotate(0) translate(-50%, -50%)
+    }
+    to {
+        transform: rotate(360deg) translate(-50%, -50%)
+    }
+}

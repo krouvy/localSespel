@@ -1,0 +1,163 @@
+.scudHigcharts {
+    width: 85%;
+    margin: 0;
+    min-height: 300px;
+}
+
+.wrapperScud {
+    width: 100%;
+    position: relative;
+}
+
+.hideScudAvatar {
+    opacity: 0;
+    transition: 1s;
+}
+
+.skudAvatar{
+    vertical-align: middle;
+    object-fit: cover;
+    transition: 1s;
+    border-radius: 360px;
+    border: 1px solid #0a0c0d;
+    max-width: 85px;
+    max-height: 85px;
+}
+
+.skudAvatar:hover {
+    transform: scale(1.9);
+    z-index: 2;
+}
+
+.otklon{
+    min-height: 0px;
+    position: absolute;
+    right: 6%;
+    width: 3%;
+    top: 342px;
+    z-index: 1;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otklon > p{
+    position: absolute;
+    top: -40px;
+    right: -5px;
+    color: rgba(26, 170, 229, 1);
+    font-weight: 600;
+    transition: 1s;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.otklonTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 5px;
+    width: 75px;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.lunchTime {
+    min-height: 0px;
+    background: rgba(26, 170, 229, 0.5);
+    width: 3%;
+    position: absolute;
+    top: 52px;
+    z-index: 1;
+    pointer-events: none;
+    transition: 1s;
+}
+
+.lunchTime > p {
+    position: absolute;
+    top: -40px;
+    left: 5px;
+    color: rgba(26, 170, 229, 1);
+    font-weight: 600;
+    transition: 1s;
+}
+
+.lunchTimeHide {
+    background: rgba(26, 170, 229, 0.1);
+}
+
+.lunchTimeHide > p {
+    color: rgba(26, 170, 229, 0.1);
+}
+
+.strokelunchTime {
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+    background: repeating-linear-gradient(-60deg, #555 0, #555 1px, transparent 1px, transparent 5px);
+}
+
+.noActiveButton {
+    pointer-events: none;
+}
+
+.smenaScud {
+    text-shadow: none;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    width: 150%;
+    display: flex;
+    top: 100%;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+}
+
+.smenaScud > span {
+    margin: 0 10px;
+}
+
+.marginToSmenaMenu {
+    margin-bottom: 50px;
+}
+
+.scudSelect {
+    color: #e51a83 !important;
+    text-shadow: 0 0 5px #e51a83,
+    0 0 25px #e51a83;
+}
+
+.scudSelectNoSelect {
+    color: #f2f6f8 !important;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.scudSelectNoSelect:hover {
+    color: #1aaae5 !important;
+    transition: 0.5s;
+}
+
+.switchButtonMessage {
+    color: #83addd;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.scudBot {
+    position: absolute;
+    top: 0;
+    background-color: #252734;
+    width: 100vw;
+}
+
+.scudBotMargin {
+    top: 50px;
+    margin-right: 15px;
+}
+

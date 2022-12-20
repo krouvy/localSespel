@@ -1,0 +1,121 @@
+.table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+.table tr > td:nth-of-type(4),
+.table tr > td:nth-of-type(5),
+.table tr > td:nth-of-type(1) {
+    border: 1px solid #dee2e6;
+}
+
+.table tr > td:nth-of-type(2),
+.table tr > td:nth-of-type(3),
+.table tr > td:nth-of-type(1) {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tableFixHead {
+    overflow: auto;
+    height: 90vh;
+    position: relative;
+    top: -1px;
+}
+
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.tableFixHeadSmena {
+    overflow: auto;
+    height: 45vh;
+    position: relative;
+    top: -1px;
+}
+
+.tableFixHeadSmena thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+/* Just common table stuff. Really. */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, #programTimeTable td {
+    padding: 8px 16px;
+}
+
+.table th {
+    background: #eee;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table th, td {
+    text-align: center;
+}
+
+.table td:nth-child(1) {
+    width: 50%;
+    text-align: end;
+}
+
+.table th:nth-child(n) {
+    border: 1px solid #dee2e6;
+}
+
+.table tr > td:nth-of-type(n) {
+    border: 1px solid #dee2e6;
+}
+
+
+#timeTable {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#timeTable th, td {
+    text-align: center;
+}
+
+
+#timeTable th:nth-child(n) {
+    border: 1px solid #dee2e6;
+}
+
+#timeTable tr > td:nth-of-type(n) {
+    border: 1px solid #dee2e6;
+}
+
+.excelIcon {
+    float: right;
+    height: 10vh;
+    margin: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 40%;
+    transition: 1s;
+}
+
+.excelIcon:hover {
+    filter: brightness(90%);
+    opacity: 100%;
+}
+

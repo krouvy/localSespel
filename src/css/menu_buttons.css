@@ -1,0 +1,176 @@
+
+#menu_ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0 0 4px 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top: 0px; /*делаем отступ сверху*/
+    /*background: rgb(36, 97, 219); !*добавляем фон всему меню*!*/
+    /*height: 50px; !*задаем высоту*!*/
+    /*text-shadow: 2px 0 2px black;*/
+}
+
+#menu_a, #menu_a1, #menu_a2, #menu_a3, #menu_a4, #menu_a5, #menu_a6, #menu_a7, #menu_a8 {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    /*background: rgb(36, 97, 219); !*добавляем фон к пункту меню*!*/
+    color: #fff; /*меняем цвет ссылок*/
+    padding: 0px 15px; /*добавляем отступ*/
+    font-family: MONTSERRAT; /*меняем шрифт*/
+    font-size: 150%;
+
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+    text-transform: uppercase;
+
+
+    /*color: #1f2a4b;*/
+    color: #ebedf3;
+    /*background: #ffffff;*/
+    font-size: 18px;
+    font-family: arial;
+    /*background-image: linear-gradient(#6793d6, #6793d6);*/
+    /*background-position: 50% 50%;*/
+    /*background-repeat: no-repeat;*/
+    /*text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 1px 1px 4px black;*/
+    font-weight: bolder;
+    text-transform: uppercase;
+
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+
+
+    margin: 5px;
+    padding: 0 20px;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+
+}
+
+/*Общее свойство для кнопок при наведении*/
+
+#menu_ul > li {
+    /*min-width: 176px;*/
+    /*max-width: 235px;*/
+    margin-top: 4px;
+    /*-webkit-box-shadow: 0px 1px 5px 0px rgb(204, 204, 204);*/
+
+}
+
+#menu_ul > li > a {
+    display: flex;
+    flex-wrap: nowrap;
+    /*border-width: 2px;*/
+    /*border-color: black;*/
+    /*border-bottom-style: solid ;*/
+    justify-content: center;
+    margin: 0px;
+
+    /*border: 1px solid #155ab7;*/
+    /*border-radius: 3px;*/
+    padding: 1px 15px;
+    /*box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);*/
+    /*inset -2px 1px 1.3rem #000000;*/
+
+}
+
+#menu_ul > li > a:hover {
+    color: #14b2f3 !important;
+    /*background: #D43737!important;*/
+    opacity: 95%;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 1px 1px 8px #1aaae5 !important;
+    /*border: 1px solid #701414;*/
+
+    /*-webkit-box-shadow: 0px 0px 1px 0px rgb(22, 33, 72);*/
+    /*-webkit-transition: .25s linear 0s;*/
+    /*-moz-transition: .25s linear 0s;*/
+    /*-o-transition: .25s linear 0s;*/
+    /*transition: .25s linear 0s*/
+    /*box-shadow: 0px 7px 8px -2px #4a9bb2, inset 0px -16px 21px -21px #4a9bb2!important;*/
+
+}
+
+
+/*#menu_li, #menu_li1, #menu_li2, #menu_li3, #menu_li4, #menu_li5, #menu_li6, #menu_li7, #menu_li8 {*/
+/*    float: left; !*Размещаем список горизонтально для реализации меню*!*/
+/*}*/
+
+.button_color {
+    position: relative;
+    font-weight: 700;
+    display: inline;
+    margin: 5px;
+    /*color: #1f2a4b;*/
+    color: #ebedf3;
+    /*background: #ffffff;*/
+    font-size: 18px;
+    font-family: arial;
+    /*background-image: linear-gradient(#6793d6, #6793d6);*/
+    /*background-position: 50% 50%;*/
+    /*background-repeat: no-repeat;*/
+    /*text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 3px 3px 6px black;*/
+    font-weight: bolder;
+    text-transform: uppercase;
+
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+
+
+    margin: 5px;
+    padding: 0 20px;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    /*border-color: #6793d6;*/
+    /*border-radius: 3px;*/
+    /*box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);*/
+}
+
+.button_color:hover {
+    color: #14b2f3 !important;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 1px 1px 8px #1aaae5 !important;
+    /*background: #D43737;*/
+    /*opacity: 95%;*/
+    /*border-color: #D43737;*/
+    /*box-shadow: 0px 7px 8px -2px #4a9bb2, inset 0px -16px 21px -21px #4a9bb2!important;*/
+
+
+    /*-webkit-box-shadow: 0px 0px 1px 0px rgb(22, 33, 72);*/
+    /*-webkit-transition: .25s linear 0s;*/
+    /*-moz-transition: .25s linear 0s;*/
+    /*-o-transition: .25s linear 0s;*/
+    /*transition: .25s linear 0s*/
+}
+
+.button_color_active {
+    color: #1aaae5 !important;
+    /*text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 3px 3px 6px black !important;*/
+    /*box-shadow: 0px 7px 8px -2px #4a9bb2, inset 0px -16px 21px -21px #4a9bb2!important;*/
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 1px 1px 8px #1aaae5 !important;
+}
+
+.button_color_active:hover {
+    color: #14b2f3 !important;
+}
+
+
+.menu-color {
+    /*background: #D43737!important;*/
+    opacity: 95%;
+    /*box-shadow: none!important;*/
+    color: #1aaae5 !important;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 1px 1px 8px #1aaae5 !important;
+    /*border: 1px solid #701414!important;*/
+    /*box-shadow: 0px 7px 8px -2px #4a9bb2, inset 0px -16px 21px -21px #4a9bb2!important;*/
+
+}
+
+.menu-color:hover {
+    color: #14b2f3 !important;
+}

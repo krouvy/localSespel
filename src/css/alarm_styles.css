@@ -1,0 +1,25 @@
+#table_alarm {
+    min-width: 90%;
+    margin: 5px auto;
+    margin-bottom: 20px;
+}
+
+#table_alarm td {
+    font-size: 18px;
+}
+
+.alarm-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.error-tittle {
+    display: block;
+    min-width: 22%;
+    max-width: 40%;
+    font-size: 18px;
+    position: relative;
+    left: -40%;
+    top: -25px;
+}

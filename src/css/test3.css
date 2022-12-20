@@ -1,0 +1,89 @@
+.calendarContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.infoChange {
+    color: #83addd !important;
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.master-container{
+    border-radius: 30px;
+    width: 350px;
+    height: 380px;
+    overflow: hidden;
+    z-index: 999999;
+    position: absolute;
+    background: #373646;
+    border-color: #464554;
+}
+
+.inputCalendarYear {
+    color: white;
+    font-size: 24px;
+    width: 100px;
+    text-align: center;
+    background: #5b6e99;
+    border-radius: 5px;
+    border: 2px solid #181a1c;
+    cursor: pointer;
+}
+
+.containerInputYear{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.react-calendar__decade-view__years > button {
+    font-size: 20px;
+}
+
+.react-calendar__navigation > button {
+    font-size: 20px;
+    color: white;
+}
+
+.react-calendar__decade-view__years > button{
+    color: white;
+}
+
+.react-calendar__tile--now {
+    background-color: #252551;
+    border-radius: 18px;
+}
+
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+    background-color: #050b2569;
+    border-radius: 5px;
+}
+
+.react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+    background: #18243b;
+}
+
+.react-calendar__navigation button {
+    transition: 0.3s;
+}
+
+.react-calendar__tile {
+    transition: 0.3s;
+}
+
+.react-calendar__tile {
+    border: 1px solid #2f2d37!important;
+    border-radius: 10px!important;
+}
+
+.react-calendar__tile:enabled:hover, .react-calendar__tile:enabled:focus {
+    background-color: #454552;
+    border-radius: 18px;
+}
+
+.react-calendar__year-view .react-calendar__tile, .react-calendar__decade-view .react-calendar__tile, .react-calendar__century-view .react-calendar__tile {
+    padding: 1.5em 0.5em;
+}
