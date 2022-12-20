@@ -4,7 +4,7 @@ import {
     Route, Routes,
 } from "react-router-dom";
 
-// import React, {useEffect, useState} from "react";
+import '../css/index.css'
 
 import Login from '../components/Login';
 import Home from "../components/home.jsx";
@@ -16,8 +16,6 @@ import Beacon from '../components/beacon.jsx';
 function App() {
     return (
         <Router>
-
-            <div>
                 <Header/>
                 <div className="headerPadding">
                 <Routes>
@@ -110,7 +108,6 @@ function App() {
                     {/*<Route exact path="/">*/}
                     {/*    <Home/>*/}
                     {/*</Route>*/}
-                </div>
             </div>
         </Router>
 

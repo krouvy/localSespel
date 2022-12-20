@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import map from '../images/beaconOffice.png';
+import map from '../images/ii_ploshadka.png';
 import '../css/beacon.css';
 
 function BeaconIcon(location) {
