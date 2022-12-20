@@ -1,9 +1,37 @@
+import React, {useEffect, useState, useHistory} from "react";
+import {Link} from "react-router-dom";
+import '../css/scud.css';
+import DayCalendar from "../components/calendarInput.jsx";
+import {SwitchLineHCIndividual} from"../components/complexButtonsInfo.jsx";
+
+import {getTimeTotalArray, msToTime, msToTimeDays, parseLinearServiceHistory,
+        parseLinearServiceNow, getRoundDiagramData, convertDaysToSmena,
+    parseLinearSutki, addLastTime, kolOperations, averageMonthdata,
+    dayNow, timeNow, dayTimeNow, dayYesterday, convertTimeToISO,
+    monthNow, bufferDataArrays, parseNameUrl, getArrayPeriodsBetween,
+    exceptionManualNagruzka, highchartsPercentTime, getTimeProgramNameGraph,
+    getUrlService, getStankiState, getCategoriesState, getObjectFromLocal,
+    interceptNetworkRequests, reloadPageIfLogin, urltoFile, classToTypeForm
+} from '../js/solution.js';
+
+import {getWorkTime, getOutWorkTimeArray, createUserDataStructure,
+    getLastDate, applyFilters, dublicateDeleteFilter, addStartOrEnd,
+    insideFilterLunch, filterLunch, parseScudForHighcharts,
+    parseScudLunches, getHighchartSeriesAndNames, getLunchHeight,
+    getOtklonHeight, msToTimeScud, getSmenaTime, selectObjectsWithSmena,
+    changeLunchOpacity, filterY, defenseFromManyRequest, getScudBotUrl
+} from '../js/solutionScud.js';
+
+import {fetchRequestScud, fetchSkudImage} from '../js/fetchRequest.js';
+import {highChartScud, highChartScudBot} from '../js/highchartReport.js';
+
+
 function Scud() {
 
     const history = useHistory()
     const [heightHighchartContainer, setHeightHighchartContainer] = useState(0);
     let [date, setDate] = useState(dayNow());
-    let [place, setPlace] = useState(parseNameUrl(location.pathname))
+    let [place, setPlace] = useState(parseNameUrl(window.location.pathname))
     let [smenaState, setSmenaState] = useState('8и')
     let [usersWithSmena, setUsersWithSmena] = useState('line')
     let [workTime, setWorkTime] = useState([])
@@ -660,4 +688,6 @@ function Photo({heightHighchartContainer, photoArray, loading}) {
         </div>
     )
 }
+
+export default Scud;
 
