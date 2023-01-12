@@ -1,5 +1,9 @@
+import {fetchRequest, fetchRequestSmena} from '../js/fetchRequests'
+import {parseLinearSutki, kolOperations, exceptionManualNagruzka, getTimeProgramNameGraph} from '../js/solutions'
+import {highChartTotalKolOp, highChartSutkiLine, highChartProgram} from '../js/highchartsReport'
+
 // Изменение состояние линейных графиков из 5-ти строк в одну
-function changeTypeLine(date, stateLineHC, setStateLineHC, complexName, complexRequest, valuesState) {
+export function changeTypeLine(date, stateLineHC, setStateLineHC, complexName, complexRequest, valuesState) {
 
     let fetchNames = valuesState.map(i => {
         return complexRequest[i]
@@ -23,7 +27,7 @@ function changeTypeLine(date, stateLineHC, setStateLineHC, complexName, complexR
 }
 
 // Изменение состояние линейных графиков из 5-ти строк в одну
-function changeTypeLineIndividual(date, stateLineHC, setStateLineHC, stankiObject, valuesStanki, setValuesStankiWait) {
+export function changeTypeLineIndividual(date, stateLineHC, setStateLineHC, stankiObject, valuesStanki, setValuesStankiWait) {
 
     let stankiState = {}
 
@@ -64,7 +68,7 @@ function changeTypeLineIndividual(date, stateLineHC, setStateLineHC, stankiObjec
 
 
 // Изменение состояние линейных графиков из 5-ти строк в одну для смены
-function changeTypeLineSmena(date, stateLineHC, setStateLineHC, complexName, complexRequest, valuesState) {
+export function changeTypeLineSmena(date, stateLineHC, setStateLineHC, complexName, complexRequest, valuesState) {
 
     let fetchNames = valuesState.map(i => {
         return complexRequest[i]
@@ -86,7 +90,7 @@ function changeTypeLineSmena(date, stateLineHC, setStateLineHC, complexName, com
 }
 
 // Обработка данных из запроса для отрисовки графиков
-function updateLoadData(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
+export function updateLoadData(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
     promiseVariable
         .then(result => {
             let data = result.map(e => {
@@ -141,7 +145,7 @@ function updateLoadData(promiseVariable, day1, complexName, fetchNames, typeLine
 }
 
 // Обработка данных из запроса для отрисовки графиков для сменных отчетов
-function updateLoadSmenaData(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
+export function updateLoadSmenaData(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
     promiseVariable
         .then(result => {
             let data = result.map(e => {
@@ -221,7 +225,7 @@ function updateLoadSmenaData(promiseVariable, day1, complexName, fetchNames, typ
 }
 
 // Обработка данных из запроса для отрисовки графиков для месячных отчетов
-function updateLoadDataMonth(promiseVariable, date, complexName, fetchNames) {
+export function updateLoadDataMonth(promiseVariable, date, complexName, fetchNames) {
     promiseVariable
         .then(result => {
 
@@ -257,7 +261,7 @@ function updateLoadDataMonth(promiseVariable, date, complexName, fetchNames) {
 }
 
 // Обработка нажатия вне компонента, аргумент функции функция callback c необходимой логикой
-function useOuterClick(callback) {
+export function useOuterClick(callback) {
     const callbackRef = useRef(); // initialize mutable ref, which stores callback
     const innerRef = useRef(); // returned to client, who marks "border" element
 
@@ -281,7 +285,7 @@ function useOuterClick(callback) {
 }
 
 // Обработка данных из запроса для отрисовки графиков
-function updateLoadDataIndividual(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
+export function updateLoadDataIndividual(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
     promiseVariable
         .then(result => {
             let data = result.map(e => {
@@ -339,7 +343,7 @@ function updateLoadDataIndividual(promiseVariable, day1, complexName, fetchNames
         });
 }
 
-function updateLoadDataIndividualMonth(promiseVariable, date, complexName, fetchNames) {
+export function updateLoadDataIndividualMonth(promiseVariable, date, complexName, fetchNames) {
     promiseVariable
         .then(result => {
 
@@ -375,7 +379,7 @@ function updateLoadDataIndividualMonth(promiseVariable, date, complexName, fetch
 }
 
 // Обработка данных из запроса для отрисовки графиков для сменных отчетов
-function updateLoadDataIndividualSmena(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
+export function updateLoadDataIndividualSmena(promiseVariable, day1, complexName, fetchNames, typeLine = "multiLine") {
     promiseVariable
         .then(result => {
             console.log('Иной смена')
@@ -459,7 +463,7 @@ function updateLoadDataIndividualSmena(promiseVariable, day1, complexName, fetch
         });
 }
 
-function updatePage(date, valuesWait, stateLineHC, placesObject) {
+export function updatePage(date, valuesWait, stateLineHC, placesObject) {
 
     let stankiObject = {}
     Object.keys(placesObject).forEach(e => {
@@ -493,7 +497,7 @@ function updatePage(date, valuesWait, stateLineHC, placesObject) {
     updateLoadDataIndividual(stankiRequest, date, complexNames, fetchNames, stateLineHC)
 }
 
-function updatePageMonth(date, valuesWait, placesObject) {
+export function updatePageMonth(date, valuesWait, placesObject) {
 
     let stankiObject = {}
     Object.keys(placesObject).forEach(e => {
@@ -527,7 +531,7 @@ function updatePageMonth(date, valuesWait, placesObject) {
     updateLoadDataIndividualMonth(stankiRequest, date, complexNames, fetchNames)
 }
 
-function updatePageSmena(date, valuesWait, stateLineHC, placesObject) {
+export function updatePageSmena(date, valuesWait, stateLineHC, placesObject) {
 
     let stankiObject = {}
     Object.keys(placesObject).forEach(e => {
@@ -561,7 +565,7 @@ function updatePageSmena(date, valuesWait, stateLineHC, placesObject) {
     updateLoadDataIndividualSmena(stankiRequest, date, complexNames, fetchNames, stateLineHC)
 }
 
-function getAllStankiData() {
+export function getAllStankiData() {
     let kim = {
         buttonNames: {
             name: "CRYSTA-Apex S9168",

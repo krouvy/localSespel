@@ -4,16 +4,22 @@ import {
     Route, Routes,
 } from "react-router-dom";
 
+import {useState} from "react";
+
 import '../css/index.css'
 
 import Login from '../components/Login';
 import Home from "../components/home.jsx";
 import Header from "../components/header.jsx";
-import Beacon from '../components/beacon.jsx';
+// import Beacon from '../components/beacon.jsx';
+import ScudMonth from '../components/scudMonth.jsx';
 
 // import Menubar from '../components/menubar.jsx';
 
 function App() {
+
+    let [scudMonthMemory, setScudMonthMemory] = useState(null)
+
     return (
         <Router>
                 <Header/>
@@ -21,7 +27,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/beacon" element={<Beacon/>}/>
+                    {/*<Route path="/beacon" element={<Beacon/>}/>*/}
+                    <Route path="/beacon" element={<ScudMonth scudMonthMemory={scudMonthMemory} setScudMonthMemory={setScudMonthMemory}/>}/>
                 </Routes>
                     {/*<Route path="/login">*/}
                     {/*    <Login/>*/}

@@ -1,3 +1,7 @@
+import Link from 'react'
+import {useState} from "react";
+import {changeTypeLine, changeTypeLineSmena} from "../js/buildConvert";
+
 function ComplexSutkiAllInfo({
                                  complexName, complexImg, complexMesto,
                                  size, idContainer = null, service,
@@ -7,7 +11,7 @@ function ComplexSutkiAllInfo({
     let idRound = `containerRound${idContainer}`
     let idProgram = null;
 
-    programs != undefined ? idProgram = `containerProgram${idContainer}` : null
+    idProgram = (programs != undefined)? `containerProgram${idContainer}` : null
 
     return (
         <div className='complexAllInfo'>
@@ -175,14 +179,14 @@ function ComplexButtons({
     let mesto = (parameter) => (event) => {
 
         window.localStorage['mestoParams'] = parameter
-        window.open("../mesto/mestoNew", '', 'scrollbars=1,height=' + Math.min(hight, screen.availHeight) +
-            ',width=' + Math.min(width, screen.availWidth))
+        window.open("../mesto/mestoNew", '', 'scrollbars=1,height=' + Math.min(hight, window.screen.availHeight) +
+            ',width=' + Math.min(width, window.screen.availWidth))
     }
 
     function personal() {
 
-        window.open("../personal/personal_vrs", '', 'scrollbars=1,height=' + Math.min(700, screen.availHeight) +
-            ',width=' + Math.min(1200, screen.availWidth))
+        window.open("../personal/personal_vrs", '', 'scrollbars=1,height=' + Math.min(700, window.screen.availHeight) +
+            ',width=' + Math.min(1200, window.screen.availWidth))
     }
 
     let error = (complexName) => (event) => {
@@ -225,7 +229,7 @@ function ComplexButtons({
                 href = "../stanki/alarm/1"
         }
 
-        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, screen.availHeight) + ',width=' + Math.min(1600, screen.availWidth))
+        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, window.screen.availHeight) + ',width=' + Math.min(1600, window.screen.availWidth))
     }
 
     let program = (complexName) => (event) => {
@@ -307,7 +311,7 @@ function ComplexButtons({
                 href = "../stanki/programTime/navigator_1"
         }
 
-        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, screen.availHeight) + ',width=' + Math.min(1600, screen.availWidth))
+        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, window.screen.availHeight) + ',width=' + Math.min(1600, window.screen.availWidth))
     }
 
     let laserButton = (complexName) => (event) => {
@@ -327,7 +331,7 @@ function ComplexButtons({
                 href = "../stanki/navigator_1"
         }
 
-        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, screen.availHeight) + ',width=' + Math.min(1600, screen.availWidth))
+        window.open(href, '', 'scrollbars=1,height=' + Math.min(1000, window.screen.availHeight) + ',width=' + Math.min(1600, window.screen.availWidth))
     }
 
     return (
@@ -465,3 +469,5 @@ function SwitchLineHCIndividual({stateLineHC, setStateLineHC, text = 'Перек
         </div>
     )
 }
+
+export default SwitchLineHCIndividual

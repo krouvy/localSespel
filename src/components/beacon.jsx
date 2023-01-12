@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import map from '../images/ii_ploshadka.png';
 import '../css/beacon.css';
-import * as hello from '../js/solution.js';
+
+import * as solutions from '../js/solutions';
 
 function BeaconIcon(location) {
 
@@ -108,7 +109,8 @@ function Beacon() {
 
 
     useEffect(() => {
-        console.log(hello.dayNow())
+        console.log(solutions.dayNow())
+        console.log(solutions.timeNow())
 
         let beaconConnect = Promise.all(ipList.map((item) => {
             return fetchCheckDevice(item)

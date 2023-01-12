@@ -1,5 +1,5 @@
 //Сутки
-function highChartSutkiLine(arrayWork, arrayPause, arrayOff, arrayAvar, arrayRuchnoi, nagruzkaName = 'Нагрузка', idContainer) {
+export function highChartSutkiLine(arrayWork, arrayPause, arrayOff, arrayAvar, arrayRuchnoi, nagruzkaName = 'Нагрузка', idContainer) {
 
     let colorNagruzka;
     if (nagruzkaName == 'Нагрузка') {
@@ -153,7 +153,7 @@ function highChartSutkiLine(arrayWork, arrayPause, arrayOff, arrayAvar, arrayRuc
     });
 }
 
-function highChartCountOperations(generalDiagramNames, countOperation, countLongOperation, chartName = '') {
+export function highChartCountOperations(generalDiagramNames, countOperation, countLongOperation, chartName = '') {
 
     let mariginBottomX;
     if (generalDiagramNames.length > 12) {
@@ -230,7 +230,7 @@ function highChartCountOperations(generalDiagramNames, countOperation, countLong
     });
 }
 
-function highChartEnergy(inputData, containerName, message = 'кубов') {
+export function highChartEnergy(inputData, containerName, message = 'кубов') {
     Highcharts.chart(containerName,
         {
             lang: {
@@ -308,13 +308,6 @@ function highChartEnergy(inputData, containerName, message = 'кубов') {
             tooltip: {
                 valueSuffix: ' ' + message,
             },
-            plotOptions: {
-                column: {
-                    dataLabels: {
-                        enabled: false
-                    }
-                }
-            },
             legend: {
                 enabled: false
             },
@@ -328,7 +321,7 @@ function highChartEnergy(inputData, containerName, message = 'кубов') {
 }
 
 //Месячный
-function highChartMonthLine(arrayWork, arrayPass, arrayFail, arrayAvar, arrayNagruzka, nagruzkaName = 'Нагрузка', idContainer) {
+export function highChartMonthLine(arrayWork, arrayPass, arrayFail, arrayAvar, arrayNagruzka, nagruzkaName = 'Нагрузка', idContainer) {
 
     let colorNagruzka;
     let workNoNagruzka = arrayWork.slice();
@@ -458,7 +451,7 @@ function highChartMonthLine(arrayWork, arrayPass, arrayFail, arrayAvar, arrayNag
 }
 
 //Суточный и месячный
-function highChartTotal(generalDiagramNames, work, pause, off, avar, nagruzka, fetchNames, date = 24, chartName = '') {
+export function highChartTotal(generalDiagramNames, work, pause, off, avar, nagruzka, fetchNames, date = 24, chartName = '') {
 
     work = Array.isArray(work) ? work : [work]
     pause = Array.isArray(pause) ? pause : [pause]
@@ -626,7 +619,7 @@ function highChartTotal(generalDiagramNames, work, pause, off, avar, nagruzka, f
 
 }
 
-function highChartSmenaTotalKolOp(total, kolOp, complexName, day1, nagruzkaName) {
+export function highChartSmenaTotalKolOp(total, kolOp, complexName, day1, nagruzkaName) {
 
     // переменные для переформирования данных 2-х смен
     let work = [[], [],]
@@ -674,7 +667,7 @@ function highChartSmenaTotalKolOp(total, kolOp, complexName, day1, nagruzkaName)
     highChartCountOperations(complexName, shortOp[1], longOp[1], '2')
 }
 
-function highChartTotalKolOp(total, kolOp, complexName, day1, nagruzkaName) {
+export function highChartTotalKolOp(total, kolOp, complexName, day1, nagruzkaName) {
 
     // переменные для переформирования данных 2-х смен
     let work = []
@@ -720,7 +713,7 @@ function highChartTotalKolOp(total, kolOp, complexName, day1, nagruzkaName) {
     highChartCountOperations(complexName, shortOp, longOp)
 }
 
-function highChartRound(work, pass, off, avar, nagruzka, nagruzkaName = 'Нагрузка', idContainer) {
+export function highChartRound(work, pass, off, avar, nagruzka, nagruzkaName = 'Нагрузка', idContainer) {
 
     let colorNagruzka
     let workNoNagruzka
@@ -815,7 +808,7 @@ function highChartRound(work, pass, off, avar, nagruzka, nagruzkaName = 'Наг�
 }
 
 //Сервис
-function highChartServiceHistory(ArrayTeh, info = null) {
+export function highChartServiceHistory(ArrayTeh, info = null) {
     // Копирования массива со всеми тех. обслуживаниями
     let arrayTeh = ArrayTeh.slice()
 
@@ -945,7 +938,7 @@ function highChartServiceHistory(ArrayTeh, info = null) {
     });
 }
 
-function highChartServiceNow(ArrayTeh, timeNext = null) {
+export function highChartServiceNow(ArrayTeh, timeNext = null) {
     if (timeNext == undefined) {
         return
     }
@@ -1086,7 +1079,7 @@ function highChartServiceNow(ArrayTeh, timeNext = null) {
     });
 }
 
-function highChartProgram(arrayProgram, idContainer = 1) {
+export function highChartProgram(arrayProgram, idContainer = 1) {
 
     let arrayTeh = arrayProgram.slice()
     let chet = []
@@ -1197,7 +1190,7 @@ function highChartProgram(arrayProgram, idContainer = 1) {
 
 }
 
-function highChartScud(series, generalDiagramNames) {
+export function highChartScud(series, generalDiagramNames) {
     Highcharts.setOptions({
         lang: {
             loading: 'Загрузка...',
@@ -1289,7 +1282,7 @@ function highChartScud(series, generalDiagramNames) {
     });
 }
 
-function highChartScudBot(series, generalDiagramNames) {
+export function highChartScudBot(series, generalDiagramNames) {
     Highcharts.setOptions({
         lang: {
             loading: 'Загрузка...',

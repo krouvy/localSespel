@@ -1,5 +1,5 @@
 // fetch запрос для суточных отчетов
-function fetchRequest(dateCalendar, complexName) {
+export function fetchRequest(dateCalendar, complexName) {
     return fetch(`/api/complexData/${complexName}_days_date:${dateCalendar}`, {method: 'GET'})
         .then((response) => response.json())
         .then((data) => {
@@ -8,7 +8,7 @@ function fetchRequest(dateCalendar, complexName) {
 }
 
 // fetch запрос для сменных отчетов
-function fetchRequestSmena(dateCalendar, complexName) {
+export function fetchRequestSmena(dateCalendar, complexName) {
     return fetch(`/api/smenaData/${complexName}_days_date:${dateCalendar}`, {method: 'GET'})
         .then((response) => response.json())
         .then((data) => {
@@ -17,7 +17,7 @@ function fetchRequestSmena(dateCalendar, complexName) {
 }
 
 // fetch запрос для месячных отчетов
-function fetchRequestMonth(dateCalendar, complexName) {
+export function fetchRequestMonth(dateCalendar, complexName) {
     return fetch(`../api/monthData/${complexName}_month_date:${dateCalendar}`, {method: 'GET'})
         .then((response) => response.json())
         .then((data) => {
@@ -26,7 +26,7 @@ function fetchRequestMonth(dateCalendar, complexName) {
 }
 
 // Получение данных для страницы сервис выбранного станка
-function fetchRequestServiceInfo(complexName) {
+export function fetchRequestServiceInfo(complexName) {
     let url = `http://${getUrlService()}/api/serviceInfo/${complexName}`
     console.log(url)
     return fetch(url, {method: 'GET'})
@@ -37,7 +37,7 @@ function fetchRequestServiceInfo(complexName) {
 }
 
 // Провести новое тех обслуживание
-function fetchRequestAddService(userName, userRole, complexName, infoWorks, periodService, setFormAddService, errorService, setErrorService) {
+export function fetchRequestAddService(userName, userRole, complexName, infoWorks, periodService, setFormAddService, errorService, setErrorService) {
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -106,7 +106,7 @@ function fetchRequestAddService(userName, userRole, complexName, infoWorks, peri
 }
 
 // Текущее состояние стенда ресурсных испытаний
-function fetchRequestCurrent(complexName, setDataReportState) {
+export function fetchRequestCurrent(complexName, setDataReportState) {
     let serverDomain = window.location.hostname
     let url = `http://${serverDomain}:8087/api/${complexName}`
 
@@ -131,7 +131,7 @@ function fetchRequestCurrent(complexName, setDataReportState) {
 }
 
 // Отчеты стенда ресурсных испытаний
-function fetchRequestReport(complexName, setDataReportState) {
+export function fetchRequestReport(complexName, setDataReportState) {
 
     let serverDomain = window.location.hostname
     let url = `http://${serverDomain}:8087/api/${complexName}`
@@ -149,7 +149,7 @@ function fetchRequestReport(complexName, setDataReportState) {
 }
 
 // Получить список пользователей, в админке стенда ресурсных испытаний
-function fetchGetReSourceUsers() {
+export function fetchGetReSourceUsers() {
     let serverDomain = window.location.hostname
     let serverPort = window.location.port
     let url = `http://${serverDomain}:${serverPort}/api/operatorInfo`
@@ -162,7 +162,7 @@ function fetchGetReSourceUsers() {
 }
 
 // Добавить нового пользователя в админке стенда ресурсных испытаний
-function fetchAddReSourceUser(authorId, fio, tabel, userRole = 'user') {
+export function fetchAddReSourceUser(authorId, fio, tabel, userRole = 'user') {
     if (userRole == "ROLE_ADMIN") {
 
         let serverDomain = window.location.hostname
@@ -181,7 +181,7 @@ function fetchAddReSourceUser(authorId, fio, tabel, userRole = 'user') {
 }
 
 // Удалить ользователя в админке стенда ресурсных испытаний
-function fetchDeleteReSourceUser(authorId, userRole = 'user') {
+export function fetchDeleteReSourceUser(authorId, userRole = 'user') {
     if (userRole == "ROLE_ADMIN") {
 
         let serverDomain = window.location.hostname
@@ -199,7 +199,7 @@ function fetchDeleteReSourceUser(authorId, userRole = 'user') {
     } else alert('Недостаточно прав')
 }
 
-function fetchRequestScud(date = '2022-10-25', place = 'Ленинградская 36, Дверь', smenaState = '8и') {
+export function fetchRequestScud(date = '2022-10-25', place = 'Ленинградская 36, Дверь', smenaState = '8и') {
     if (smenaState == '8и') {
         return fetch(`/api/scud/beginDate:${date} 00:00:00_endDate:${date} 23:59:59_mesto:${place}`, {method: 'GET'})
             .then((response) => response.json())
@@ -238,7 +238,7 @@ function fetchRequestScud(date = '2022-10-25', place = 'Ленинградска
 
 }
 
-function fetchSkudImage(date = '2022-10-25', place = 'Ленинградская 36, Дверь', smenaState = '8и') {
+export function fetchSkudImage(date = '2022-10-25', place = 'Ленинградская 36, Дверь', smenaState = '8и') {
     if (smenaState == '8и') {
         return fetch(`/api/scudImage/beginDate:${date} 00:00:00_endDate:${date} 23:59:59_mesto:${place}`, {method: 'GET'})
             .then((response) => response.json())
@@ -276,7 +276,7 @@ function fetchSkudImage(date = '2022-10-25', place = 'Ленинградская
     }
 }
 
-function fetchRequestAdminUserInfo() {
+export function fetchRequestAdminUserInfo() {
     return fetch(`/api/adminpanel/userList`, {method: 'POST'})
         .then((response) => response.json())
         .then((data) => {
@@ -284,7 +284,7 @@ function fetchRequestAdminUserInfo() {
         })
 }
 
-function fetchRequestAdminAddUser(user) {
+export function fetchRequestAdminAddUser(user) {
     let base64 = document.querySelectorAll('.outputImage')[1].src
     return urltoFile(base64, base64.slice(10, 20))
         .then(function (file) {
@@ -304,7 +304,7 @@ function fetchRequestAdminAddUser(user) {
         });
 }
 
-function fetchRequestAdminChangeUser(user) {
+export function fetchRequestAdminChangeUser(user) {
     let base64 = document.querySelectorAll('.outputImage')[1].src
     return urltoFile(base64, base64.slice(10, 20))
         .then(function (file) {
@@ -323,7 +323,7 @@ function fetchRequestAdminChangeUser(user) {
         });
 }
 
-function fetchRequestAdminDeleteUser(login) {
+export function fetchRequestAdminDeleteUser(login) {
     return fetch(`/api/adminpanel/deleteUser-${login}`, {method: 'DELETE'})
         .then(response => response.text())
         .then((result) => {
@@ -381,3 +381,27 @@ function fetchRequestAdminDeleteUser(login) {
 //     }
 //
 // })
+
+export function fetchRequestLogin(username='buklov_av', password='sespel887') {
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw = JSON.stringify({
+        "username": username,
+        "password": password,
+    });
+
+    let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+        fetch(`http://192.168.2.79:8000/auth/signin`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => console.log('Ошибка при отправке запроса', error));
+
+}

@@ -1,7 +1,7 @@
 import {useEffect, useState, useRef} from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-function LogoutButton({setDropdown}) {
+export function LogoutButton({setDropdown}) {
     // const history = useHistory();
 
     function handleClick() {
@@ -22,7 +22,7 @@ function LogoutButton({setDropdown}) {
     );
 }
 
-function useOutsideAlerter(ref,dropDown, setDropdown) {
+export function useOutsideAlerter(ref,dropDown, setDropdown) {
     useEffect(() => {
         /**
          * Alert if clicked on outside of element

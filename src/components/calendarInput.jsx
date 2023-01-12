@@ -1,3 +1,7 @@
+import React, {useState, useRef} from 'react'
+import {useOutsideAlerter} from '../components/dropdown'
+import '../css/calendarMonth.css'
+
 function DayCalendar(dateInput) {
 
     return (
@@ -202,3 +206,5 @@ const MonthCalendar = ({newDate, dateMonth}) => {
 
     )
 }
+
+export default MonthCalendar

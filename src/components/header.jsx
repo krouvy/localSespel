@@ -9,13 +9,13 @@ function Header() {
 
     useEffect(() => {
 
-        fetch('/api/userInfo', {
-            method: 'POST'
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setDataProfile(data)
-            })
+        // fetch('/api/userInfo', {
+        //     method: 'POST'
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         setDataProfile(data)
+        //     })
 
     }, [])
 
