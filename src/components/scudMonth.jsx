@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
+import { Link } from 'react-router-dom'
 import {dayTimeNow} from '../js/solutions';
 import MonthCalendar from '../components/calendarInput'
 // import SwitchLineHCIndividual from '../components/complexButtonsInfo'
 import '../css/energy.css'
+import '../css/scud.css'
+import '../css/stanki.css'
 
 function getThisYearMonth() {
     let monthsNumber = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
@@ -14,7 +17,7 @@ function getThisYearMonth() {
 
 function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
 
-    let tableState = [{
+    let tableData = [{
         POS: "Главный энергетик1",
         logtime: null,
         monthObject: {
@@ -46,6 +49,8 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
         tabid: "1464",
     },
     ]
+
+    let [tableState, setTableState] = useState(null)
 
     // tableState = null
 
@@ -82,13 +87,14 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
     }
 
     let [dateMonth, setDateMonth] = useState(getThisYearMonth());
-    // let [smenaState, setSmenaState] = useState('8и')
-    // let [usersWithSmena, setUsersWithSmena] = useState('line')
+    let [smenaState, setSmenaState] = useState('8и')
+
 
 
     useEffect(() => {
+        // setTableState(tableData)
         saveMemoryMonth()
-    }, [dateMonth]);
+    }, [dateMonth,tableState]);
 
     function newDate(dateInput) {
         setDateMonth(dateInput)
@@ -96,60 +102,78 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
 
     return (
         <div>
-            {/*<div className="buttons-otchet marginToSmenaMenu cancelMargin">*/}
-
-            <div className="daysMonthWrapper">
-
-                <a href={`/scud/1ploshadka`}>
-                    <div className="menuNoSelect">СУТОЧНЫЙ ОТЧЕТ</div>
-                </a>
-
-                <a href={`/scudMonth`}>
-                    <div className="menuSelect">МЕСЯЧНЫЙ ОТЧЕТ</div>
-                </a>
-
+            <div className="buttons-otchet marginToSmenaMenu cancelMargin">
+                <LinkMonth smenaState={smenaState} setSmenaState={setSmenaState}/>
             </div>
-
-            {/*</div>*/}
-            {/*<div className="energyCalendarContainer">*/}
-            <MonthCalendar newDate={newDate} dateMonth={dateMonth}/>
-            {/*    <div className='hideIndividualAll'>*/}
-            {/*        <SwitchLineHCIndividual stateLineHC={usersWithSmena} setStateLineHC={setUsersWithSmena}*/}
-            {/*                                text={'Привязка по смене'}/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<p className='switchButtonMessage'>{usersWithSmena == 'line' ? 'Отображение сотрудников по выбранного графику' : 'Все сотрудники'}</p>*/}
-
-            {tableState == null? null : <table>
-                <thead>
-                <tr>
-                    <th>№</th>
-                    <th>Имя</th>
-                    <th>Должность</th>
-                    <th>Таб.</th>
-                    {Object.keys(tableState[0]['monthObject']).map((day, thKey) => {
-                        return <th key={thKey}>{day}</th>
-                    })}
-                    <th>Итого</th>
-                </tr>
-                </thead>
-                <tbody>
-                {tableState.map((user, i) => {
-                    return <tr key={i}>
-                        <td>{i + 1}</td>
-                        <td>{user.name}</td>
-                        <td>{user.POS}</td>
-                        <td>{user.tabid}</td>
-                        {Object.keys(user.monthObject).map((day,tdKey) => {
-                            return (<td key={tdKey}>{user.monthObject[day]}</td>)
-                        })}
-                        <td>{user.monthTotalTime}</td>
-                    </tr>
-                })}
-                </tbody>
-            </table>}
+            <div className="energyCalendarContainer">
+                <MonthCalendar newDate={newDate} dateMonth={dateMonth}/>
+            </div>
+            {/*<ScudMonthTable tableState={tableState} sortState={sortState} loadingState={loadingState}/>*/}
         </div>
     );
+}
+
+
+function LinkMonth({smenaState, setSmenaState}) {
+
+    return (
+        <div className="daysMonthWrapper">
+
+            <Link to={`/scud/1ploshadka`}>
+                <div className="menuNoSelect">СУТОЧНЫЙ ОТЧЕТ</div>
+            </Link>
+
+            <Link to={`/scudMonth`}>
+                <div className="menuSelect">МЕСЯЧНЫЙ ОТЧЕТ
+                    <div className={`smenaScud`}>
+                        <span className={smenaState == '8' ? 'scudSelect' : 'scudSelectNoSelect'}
+                              onClick={() => {
+                                  setSmenaState('8')
+                              }}>8 часов
+                        </span>
+                        <span className={smenaState == '7' ? 'scudSelect' : 'scudSelectNoSelect'}
+                              onClick={() => {
+                                  setSmenaState('7')
+                              }}>7.2 часа
+                        </span>
+                        <span className={smenaState == '11' ? 'scudSelect' : 'scudSelectNoSelect'}
+                              onClick={() => {
+                                  setSmenaState('11')
+                              }}>11 часов
+                        </span>
+                        <span className={smenaState == '24' ? 'scudSelect' : 'scudSelectNoSelect'}
+                              onClick={() => {
+                                  setSmenaState('24')
+                              }}>24 часа
+                        </span>
+                        <span className={smenaState == '8и' ? 'scudSelect' : 'scudSelectNoSelect'}
+                              onClick={() => {
+                                  setSmenaState('8и')
+                              }}>ИТР
+                        </span>
+                        <span
+                            className={`hideIndividualAll ${(smenaState == 'hiddens') ? 'scudSelect' : 'scudSelectNoSelect'}`}
+                            onClick={() => {
+                                setSmenaState('hiddens')
+                            }}>Скрытые
+                        </span>
+                    </div>
+                </div>
+            </Link>
+
+        </div>
+    )
+}
+
+function Loader() {
+
+    return (
+        <div className="loaderWrapper">
+            <div className="loaderText">IoT Sespel</div>
+            <div className="loader"></div>
+        </div>
+    )
+
 }
 
 export default ScudMonth;

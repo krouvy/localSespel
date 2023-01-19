@@ -118,7 +118,7 @@ function Menubar() {
             {/*    <h2 className="buttonName">Склад</h2>*/}
             {/*</a>*/}
 
-            <Link to="/scud/2ploshadka" className="container-home">
+            <Link to="/scudMonth/" className="container-home">
                 <div className="icon-container">
                     <p>Отслеживание работы сотрудников в зонах предприятия</p>
                     <div className="scud"></div>

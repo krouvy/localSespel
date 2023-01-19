@@ -28,7 +28,8 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
                     {/*<Route path="/beacon" element={<Beacon/>}/>*/}
-                    <Route path="/beacon" element={<ScudMonth scudMonthMemory={scudMonthMemory} setScudMonthMemory={setScudMonthMemory}/>}/>
+                    <Route path="/scudMonth" element={<ScudMonth scudMonthMemory={scudMonthMemory} setScudMonthMemory={setScudMonthMemory}/>}/>
+
                 </Routes>
                     {/*<Route path="/login">*/}
                     {/*    <Login/>*/}
@@ -100,9 +101,7 @@ function App() {
                     {/*    <Beacon/>*/}
                     {/*</Route>*/}
 
-                    {/*<Route path="/scud">*/}
-                    {/*    <Scud/>*/}
-                    {/*</Route>*/}
+
 
                     {/*<Route path="/bot/scudBot">*/}
                     {/*    <ScudBot/>*/}
