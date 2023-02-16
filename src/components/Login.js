@@ -1,7 +1,9 @@
 import '../css/login.css';
-// import Logo from '../images/MVP.png'
+import '../css/usersControl.css';
 import PasswordView from '../images/view.svg'
 import PasswordNoView from '../images/no-view.svg'
+
+import Logo from "../images/logo_white.png";
 
 import {useNavigate} from "react-router-dom";
 import React, {useState} from 'react';
@@ -12,9 +14,10 @@ function Login() {
     let navigate = useNavigate();
     let [login, setLogin] = useState("")
     let [password, setPassword] = useState("")
-    const [errorMsg, setErrorMsg] = useState('');
-
+    let [rememberMe, setRememberMe] = useState(false)
     let [passwordEye, setpasswordEye] = useState(false)
+
+    const [errorMsg, setErrorMsg] = useState('');
 
 
     const toggleClass = () => {
@@ -32,49 +35,55 @@ function Login() {
     }
 
     return (
-        <div className="loginTheme">
+        <>
+            <div className="loginTheme"></div>
+            <div className={'loginMenu'}>
+                <img className="loginLogo"
+                     src={Logo}/>
+                <div className="box login">
+                    <div>
+                        <h2>Авторизация</h2>
+                        <input
+                            type="text"
+                            className="inputBtn"
+                            tabIndex="1"
+                            placeholder="Username"
+                            onChange={event => setLogin(event.target.value)}
 
-            {/*<video autoPlay muted loop id="myVideo">*/}
-            {/*    <source*/}
-            {/*        src={Video}*/}
-            {/*        type="video/mp4"/>*/}
-            {/*        Your browser does not support HTML5 video*/}
-            {/*</video>*/}
-
-            <img className="loginLogo"
-                 src={null}/>
-
-            <div className="box login">
-                <div>
-                    <h2>Авторизация</h2>
-                    <input
-                        type="text"
-                        className="inputBtn"
-                        tabIndex="1"
-                        placeholder="Username"
-                        onChange={event => setLogin(event.target.value)}
-
-                    />
-                    <div className='passwordContainer'>
-                    <input
-                        type={passwordEye?'text':'password'}
-                        className="inputBtn"
-                        tabIndex="1"
-                        placeholder="Password"
-                        onChange={event => setPassword(event.target.value)}
-
-                    />
-                        <img src={passwordEye?PasswordView:PasswordNoView} className="passwordEye"
-                             onClick={() =>  toggleClass()}
                         />
-                    </div>
-                    {errorMsg.length>0 ?
-                    <p
-                        id="errorMsg"
-                        className="error-msg"> {errorMsg}
-                    </p>
-                        : null
-                    }
+                        <div className='passwordDiv'>
+                            <input
+                                type={passwordEye ? 'text' : 'password'}
+                                className="inputBtn"
+                                tabIndex="1"
+                                placeholder="Password"
+                                onChange={event => setPassword(event.target.value)}
+
+                            />
+                            <img src={passwordEye ? PasswordView : PasswordNoView}
+                                 className="passwordEye"
+                                 onClick={() => toggleClass()}
+                            />
+                        </div>
+                        <input
+                            id="abc"
+                            className="inputBtn"
+                            name="remember"
+                            type="checkbox"
+                            onClick={event => setRememberMe(event.target.checked)}
+                        />
+                        <label
+                            htmlFor="abc"
+                            className="label-block checkbox">
+                            Запомнить меня
+                        </label>
+                        {errorMsg.length > 0 ?
+                            <p
+                                id="errorMsg"
+                                className="error-msg"> {errorMsg}
+                            </p>
+                            : null
+                        }
 
                         <div
                             id="login-btn"
@@ -85,11 +94,11 @@ function Login() {
                         </div>
 
 
-
+                    </div>
                 </div>
             </div>
+        </>
 
-        </div>
     )
 }
 

@@ -5,6 +5,7 @@ import MonthCalendar from '../components/calendarInput'
 // import SwitchLineHCIndividual from '../components/complexButtonsInfo'
 import '../css/energy.css'
 import '../css/scud.css'
+import '../css/scudMonth.css'
 import '../css/stanki.css'
 
 function getThisYearMonth() {
@@ -27,11 +28,11 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
             4: 22010000,
         },
         monthTotalTime: 110467000,
-        name: "Диомидов Михаил Юрьевич1",
+        name: "Васильев Михаил Юрьевич1",
         photo: undefined,
         smenaInfo: "8и",
         statusInOut: null,
-        tabid: "1464",
+        tabid: "1235",
     }, {
         POS: "Главный энергетик2",
         logtime: null,
@@ -46,11 +47,14 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
         photo: undefined,
         smenaInfo: "8и",
         statusInOut: null,
-        tabid: "1464",
+        tabid: "1234",
     },
     ]
 
     let [tableState, setTableState] = useState(null)
+
+    let [sortState, setSortState] = useState('name')
+    let [findState, setFindState] = useState('')
 
     // tableState = null
 
@@ -86,6 +90,11 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
         }
     }
 
+    function changeFind(e) {
+        const {value} = e.target;
+        setFindState(value);
+    };
+
     let [dateMonth, setDateMonth] = useState(getThisYearMonth());
     let [smenaState, setSmenaState] = useState('8и')
 
@@ -107,7 +116,18 @@ function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
             </div>
             <div className="energyCalendarContainer">
                 <MonthCalendar newDate={newDate} dateMonth={dateMonth}/>
+                <div className={'findWrapper'}>
+                    <p>Поиск</p>
+                    <input id="find" name="find" className={'scudMonthFind'} value={findState}
+                           autoComplete={'on'}
+                            onChange={(e) => {
+                                changeFind(e)
+                            }}>
+                    </input>
+                </div>
             </div>
+
+
             {/*<ScudMonthTable tableState={tableState} sortState={sortState} loadingState={loadingState}/>*/}
         </div>
     );

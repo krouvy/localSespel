@@ -1,0 +1,92 @@
+.scudMonthTable {
+    margin: 0 auto;
+    color: white;
+    border-spacing: 0px;
+    border:0.1px solid #70727b;
+    max-width: 500px;
+    font-size: 15px;
+}
+
+.scudMonthTable thead > tr > th{
+    background: #1e4058;
+    border:0.1px solid #70727b;
+    margin: 0;
+    padding: 3px;
+}
+
+.scudMonthTable tbody > tr > td{
+    border:0.1px solid #70727b;
+    margin: 0;
+    /* padding: 3px; */
+}
+
+.scudMonthTable tr > td:nth-of-type(-n+4) {
+    background: #3e4955;
+    min-width:5px;
+    max-width:300px;
+
+}
+
+.scudMonthTable tr > td:nth-of-type(1) {
+    background: #3e4955;
+    text-align: center;
+}
+
+.scudMonthTable tr > td:nth-of-type(3) {
+    background: #3e4955;
+    text-align: center;
+}
+
+
+.scudMonthTable tr > td:nth-of-type(n+5) {
+    background: #3e4955;
+    text-align: center;
+    min-width: 35px;
+    max-width: 40px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.scudMonthTable tr > td:nth-last-child(-2n+2){
+    border-right: 3px solid #ff0000;
+}
+
+.scudMonthTable tr > td:last-child{
+    border-left: 3px solid #ff0000;
+}
+
+.scudMonthTable tr:hover td{
+    background-color: #37516d;
+    cursor: pointer;
+}
+
+.findWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.findWrapper > p {
+    margin: 0;
+    color: #83addd !important;
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+}
+
+.scudMonthFind{
+    color: white;
+    background: #252734;
+    border-width: 2px;
+    border-style: inset;
+    border-color: #83addd;
+    border-radius: 5%;
+    padding: 2px 0;
+    height: 25px;
+    width: 150px;
+    font-size: 17px;
+}
+
+.scudMonthFind:hover {
+    cursor: pointer;
+}
