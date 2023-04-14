@@ -1,3 +1,4 @@
+
 //Сутки
 export function highChartSutkiLine(arrayWork, arrayPause, arrayOff, arrayAvar, arrayRuchnoi, nagruzkaName = 'Нагрузка', idContainer) {
 

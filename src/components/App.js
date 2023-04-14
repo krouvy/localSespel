@@ -13,6 +13,8 @@ import Home from "../components/home.jsx";
 import Header from "../components/header.jsx";
 // import Beacon from '../components/beacon.jsx';
 import ScudMonth from '../components/scudMonth.jsx';
+import Network from '../components/network.jsx';
+import Service from '../components/service.jsx';
 
 // import Menubar from '../components/menubar.jsx';
 
@@ -27,8 +29,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    {/*<Route path="/beacon" element={<Beacon/>}/>*/}
+                    <Route path="/network" element={<Network/>}/>
                     <Route path="/scudMonth" element={<ScudMonth scudMonthMemory={scudMonthMemory} setScudMonthMemory={setScudMonthMemory}/>}/>
+                    <Route path="/service/ntx1000" element={<Service/>}/>
 
                 </Routes>
                     {/*<Route path="/login">*/}

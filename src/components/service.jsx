@@ -1,3 +1,8 @@
+import React, {useEffect, useState} from "react"
+import {parseNameUrl, getArrayPeriodsBetween, convertTimeToISO} from '../js/solutions.js';
+// import {highChartServiceHistory, highChartServiceNow} from '../js/highchartsReport';
+import {fetchRequestServiceInfo, fetchRequestAddService} from '../js/fetchRequests.js';
+
 function Service() {
 
     let [formAddService, setFormAddService] = useState(false);
@@ -24,7 +29,7 @@ function Service() {
             'стп13м': 'stp13m.png', 'trulaser': 'trulaser.png',
             'увф-1': 'uvf_1_2.png', 'уф5220': 'UVF_5220.png', 'врс1': 'nasos.png',
             'врс2': 'nasos_vrs2.png', 'котельная': 'gazStation.png', 'ктп400': 'electroStation.png',
-            'ктп630': 'electroStation.png', 'ктп2500': 'electroStation.png', 'ктп400': 'electroStation.png',
+            'ктп630': 'electroStation.png', 'ктп2500': 'electroStation.png',
             'cтенд': 'stendResource.png'
         }
 
@@ -82,8 +87,8 @@ function Service() {
                 return [e.user_name, e.info_works]
             })
 
-            highChartServiceHistory(allServiceArray.reverse(), info.reverse())
-            highChartServiceNow(allServiceArray.reverse(), lastPeriod)
+            // highChartServiceHistory(allServiceArray.reverse(), info.reverse())
+            // highChartServiceNow(allServiceArray.reverse(), lastPeriod)
         })
 
 
@@ -211,3 +216,5 @@ function TableServiceData({dataService}) {
         </tbody>
     )
 }
+
+export default Service

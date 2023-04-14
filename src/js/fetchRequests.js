@@ -1,3 +1,4 @@
+import {getUrlService, dayTimeNow, msToTimeDays, dayYesterday, urltoFile} from '../js/solutions'
 // fetch запрос для суточных отчетов
 export function fetchRequest(dateCalendar, complexName) {
     return fetch(`/api/complexData/${complexName}_days_date:${dateCalendar}`, {method: 'GET'})
@@ -92,8 +93,8 @@ export function fetchRequestAddService(userName, userRole, complexName, infoWork
                         return [e.user_name, e.info_works]
                     })
 
-                    highChartServiceHistory(allServiceArray.reverse(), info.reverse())
-                    highChartServiceNow(allServiceArray.reverse(), periodService)
+                    // highChartServiceHistory(allServiceArray.reverse(), info.reverse())
+                    // highChartServiceNow(allServiceArray.reverse(), periodService)
                 }
             })
             .catch(error => console.log('Ошибка при отправке запроса', error));

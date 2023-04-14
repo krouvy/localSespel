@@ -1,5 +1,5 @@
 .scudMonthTable {
-    margin: 0 auto;
+    margin: 15px auto;
     color: white;
     border-spacing: 0px;
     border:0.1px solid #70727b;
@@ -14,10 +14,20 @@
     padding: 3px;
 }
 
+.scudMonthTable thead > tr > th:nth-child(2){
+    text-align: left;
+}
+
 .scudMonthTable tbody > tr > td{
     border:0.1px solid #70727b;
     margin: 0;
     /* padding: 3px; */
+}
+
+.scudMonthTable tbody > tr > td:nth-child(3),
+.scudMonthTable tbody > tr > td:nth-child(4){
+    padding: 0 5px;
+
 }
 
 .scudMonthTable tr > td:nth-of-type(-n+4) {
@@ -34,7 +44,7 @@
 
 .scudMonthTable tr > td:nth-of-type(3) {
     background: #3e4955;
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -47,12 +57,9 @@
     font-weight: 600;
 }
 
-.scudMonthTable tr > td:nth-last-child(-2n+2){
-    border-right: 3px solid #ff0000;
-}
-
 .scudMonthTable tr > td:last-child{
-    border-left: 3px solid #ff0000;
+    min-width: 75px;
+    background: #143355;
 }
 
 .scudMonthTable tr:hover td{
@@ -60,18 +67,42 @@
     cursor: pointer;
 }
 
-.findWrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
+.tableMessage {
+    margin: 0 auto;
+    text-align: center;
+    color: #83addd !important;
+    font-size: 30px;
+    margin-right: 15px;
+    font-weight: 600;
 }
 
-.findWrapper > p {
-    margin: 0;
-    color: #83addd !important;
-    font-size: 18px;
+.findWrapper {
     position: absolute;
-    top: -20px;
+    display: flex;
+    justify-content: center;
+    right: 10px;
+}
+
+.searchButton {
+    width: 50px;
+    height: 33px;
+    background: #83addd;
+    border-radius: 5%;
+    margin-left: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.searchButton:hover{
+    background: #70b3ff;
+}
+
+.findWrapper img {
+    height: 100%;
+    pointer-events: none;
 }
 
 .scudMonthFind{
@@ -81,12 +112,90 @@
     border-style: inset;
     border-color: #83addd;
     border-radius: 5%;
-    padding: 2px 0;
+    padding: 2px 6px;
     height: 25px;
-    width: 150px;
+    width: 375px;
     font-size: 17px;
+}
+
+.scudMonthFind::placeholder{
+    color: #9098a0;
+    opacity: 80%;
 }
 
 .scudMonthFind:hover {
     cursor: pointer;
 }
+
+.scudMonthSort:hover {
+    cursor: pointer;
+}
+
+.sortedIcon{
+    position: sticky;
+    cursor: pointer;
+}
+
+.sortedIcon:hover {
+    transition: 0.5s;
+    color: #61afff;
+}
+
+.sortedIcon:hover::before {
+    transition: 0.5s;
+    color:#61afff;
+}
+
+.sortedIcon::before {
+    content: '▼';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 7px;
+    top: 4px;
+    color: white;
+}
+
+.scudMonthTable tr > td:nth-child(2) {
+    min-width: 48px;
+    text-align: center;
+}
+
+.activeSortedIcon {
+    color: #61afff;
+}
+
+.activeSortedIcon::before {
+    color: #61afff;
+}
+
+.scudMonthMainTable thead th {
+    position: sticky;
+    top: 0;
+}
+
+.scudExcel{
+    bottom: 10px;
+    right: 25px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 40%;
+    transition: 1s;
+}
+
+.scudExcel:hover{
+    opacity: 100%;
+}
+
+.scudExcelMain{
+    position: fixed;
+}
+
+.scudExcelSlave{
+    position: absolute;
+    top: 230px;
+    right: 600px;
+}
+
+
+

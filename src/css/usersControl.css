@@ -18,7 +18,7 @@
 
 .formUsersControl > label {
     font-size: 25px;
-    margin: 5px 5px 5px 10px;
+    margin: 5px 5px 5px 22px;
     color: white;
 }
 
@@ -281,7 +281,7 @@
     height: 100vh;
     z-index: 2;
     background: #0c0e18;
-    position: absolute;
+    position: fixed;
     top: 0;
     opacity: 70%;
     cursor: pointer;
@@ -296,9 +296,14 @@ p.formAdminName {
 
 .passwordDiv{
     position: relative;
+    width: 92%;
     margin: 0 auto;
     display: flex;
     align-items: center;
+}
+
+.passwordDiv > .passwordEye{
+    top:8px;
 }
 
 .passwordInput {
