@@ -18,6 +18,8 @@ function getThisYearMonth() {
 
 function ScudMonth({scudMonthMemory, setScudMonthMemory}) {
 
+    console.log('Открылся Скуд маунтх')
+
     let tableData = [{
         POS: "Главный энергетик1",
         logtime: null,
